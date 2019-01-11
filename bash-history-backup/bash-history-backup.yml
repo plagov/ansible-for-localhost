@@ -1,0 +1,25 @@
+- hosts: localhost
+  tasks:
+    - name: Git clone .bash_history backup
+      git:
+        repo: git@github.com:plagov/bash-history-backup.git
+        dest: ~/.history-backup
+
+    - name: Git clone shell scripts
+      git:
+        repo: git@github.com:plagov/shell-scripts.git
+        dest: ~/shell-scripts
+
+    - name: Copy file from backup directory to home
+      copy:
+        src: ~/.history-backup/.bash_history
+        dest: ~/.bash_history
+
+    - name: Set cron job to make regular backup of .bash_history
+      cron:
+        name: bash_history backup
+        minute: 0
+        hour: 23
+        day: "*/2"
+        job: /home/vplagov/shell-scripts/bash_history-backup.sh
+
