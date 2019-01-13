@@ -1,0 +1,9 @@
+- hosts: localhost
+  tasks:
+    - name: Set cron job to regularly clean AceStream cache
+      cron:
+        name: remove AceStream cache files
+        minute: 0
+        hour: 23
+        day: "*/2"
+        job: "rm /home/vplagov/.wine/drive_c/_acestream_cache_/*"
