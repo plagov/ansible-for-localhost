@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks:
+    - name: Install common packages
+      become: true
+      dnf:
+        state: present
+        name:
+          - fzf
