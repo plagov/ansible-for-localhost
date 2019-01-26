@@ -1,0 +1,19 @@
+- hosts: localhost
+  tasks:
+    - name: Git clone KeePass backup
+      git:
+        repo: git@github.com:plagov/keepass-backup.git
+        dest: ~/.keepass-backup
+    
+    - name: Git clone shell scripts
+      git:
+        repo: git@github.com:plagov/shell-scripts.git
+        dest: ~/shell-scripts
+
+    - name: Set cron job to make regular backup of KeePass
+      cron:
+        name: KeePass backup
+        minute: 0
+        hour: 23
+        day: "*/2"
+        job: /home/vplagov/shell-scripts/keepass-backup.sh
