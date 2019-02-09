@@ -2,8 +2,14 @@
   tasks:
     - name: Install common packages
       become: true
-      dnf:
-        state: present
-        name:
-          - fzf
-          - ansible-lint
+      package: name={{ item }} state=present
+      with_items:
+        - fzf
+        - ansible-lint
+
+    - name: Uninstall common packages
+      become: true
+      package: name={{ item }} state=absent
+      with_items:
+        - evolution
+        - libreoffice-core
