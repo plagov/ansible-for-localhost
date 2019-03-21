@@ -1,0 +1,11 @@
+- hosts: localhost
+  tasks:
+
+    - name: Install requirements
+      package:
+        name: libselinux-python
+        state: present
+
+    - name: Disable SELinux
+      selinux:
+        state: disabled
