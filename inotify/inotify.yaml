@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+
+    - name: Increase watch handlers for IntelliJ IDEA
+      copy:
+        src: idea.conf
+        dest: /etc/sysctl.d/
+
+    - name: Apply changes
+      command: sysctl -p --system
