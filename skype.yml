@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+    - name: Install Skype from an rpm binary
+      dnf:
+        name: 'https://go.skype.com/skypeforlinux-64.rpm'
+        state: present
