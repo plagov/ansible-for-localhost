@@ -6,6 +6,7 @@
       with_items:
         - fzf
         - ansible-lint
+        - asciidoctor
 
     - name: Uninstall common packages
       become: true
@@ -13,3 +14,4 @@
       with_items:
         - evolution
         - libreoffice-core
+        - libreofficekit
