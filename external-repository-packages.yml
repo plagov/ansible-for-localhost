@@ -1,0 +1,13 @@
+- hosts: localhost
+  tasks:
+    - name: Add repository
+      yum_repository:
+        name: rpmfusion
+        description: RPM Fusion repo
+        baseurl: http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm
+
+    - name: install packages from rpmfusion repo
+      become: true
+      package: name={{ item }} state=present
+      with_items:
+        - fuse-exfat
