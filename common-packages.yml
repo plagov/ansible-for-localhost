@@ -16,3 +16,7 @@
         - evolution
         - libreoffice-core
         - libreofficekit
+
+    - name: Install Flatpak apps
+      flatpak:
+        name: com.spotify.Client
