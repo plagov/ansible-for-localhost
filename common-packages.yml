@@ -8,6 +8,7 @@
         - ansible-lint
         - asciidoctor
         - calibre
+        - keepassxc
 
     - name: Uninstall common packages
       become: true
