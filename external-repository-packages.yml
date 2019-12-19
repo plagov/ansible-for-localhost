@@ -11,3 +11,5 @@
       package: name={{ item }} state=present
       with_items:
         - fuse-exfat
+        - ffmpeg-libs
+        - compat-ffmpeg28
