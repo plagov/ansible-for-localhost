@@ -13,3 +13,4 @@
         - fuse-exfat
         - ffmpeg-libs
         - compat-ffmpeg28
+        - vlc
