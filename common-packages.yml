@@ -21,3 +21,10 @@
     - name: Install Flatpak apps
       flatpak:
         name: com.spotify.Client
+
+    - name: Install packages by a direct RPM
+      become: true
+      package: name={{ item }} state=present
+      with_items:
+        - https://go.skype.com/skypeforlinux-64.rpm
+        - https://zoom.us/client/latest/zoom_x86_64.rpm
