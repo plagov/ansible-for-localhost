@@ -2,21 +2,24 @@
   tasks:
     - name: Install common packages
       become: true
-      package: name={{ item }} state=present
-      with_items:
-        - fzf
-        - ansible-lint
-        - asciidoctor
-        - calibre
-        - keepassxc
+      package:
+        name:
+          - fzf
+          - ansible-lint
+          - asciidoctor
+          - calibre
+          - keepassxc
+        state: present
+
 
     - name: Uninstall common packages
       become: true
-      package: name={{ item }} state=absent
-      with_items:
-        - evolution
-        - libreoffice-core
-        - libreofficekit
+      package:
+        name:
+          - evolution
+          - libreoffice-core
+          - libreofficekit
+        state: absent
 
     - name: Install Flatpak apps
       flatpak:
@@ -24,7 +27,8 @@
 
     - name: Install packages by a direct RPM
       become: true
-      package: name={{ item }} state=present
-      with_items:
-        - https://go.skype.com/skypeforlinux-64.rpm
-        - https://zoom.us/client/latest/zoom_x86_64.rpm
+      package:
+        name:
+          - https://go.skype.com/skypeforlinux-64.rpm
+          - https://zoom.us/client/latest/zoom_x86_64.rpm
+        state: present
