@@ -9,6 +9,8 @@
           - asciidoctor
           - calibre
           - keepassxc
+          - ifuse
+          - gthumb
         state: present
 
 
@@ -19,6 +21,7 @@
           - evolution
           - libreoffice-core
           - libreofficekit
+          - shotwell
         state: absent
 
     - name: Install Flatpak apps
