@@ -25,9 +25,13 @@
           - shotwell
         state: absent
 
-    - name: Install Flatpak apps
+    - name: Install Spotify flatpak
       flatpak:
         name: com.spotify.Client
+
+    - name: Install Telegram flatpak
+      flatpak:
+        name: org.telegram.desktop
 
     - name: Install packages by a direct RPM
       become: true
