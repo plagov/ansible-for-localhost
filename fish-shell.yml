@@ -1,0 +1,13 @@
+- hosts: localhost
+  tasks:
+    - name: Install fish and related packages
+      become: true
+      package:
+        name:
+          - fish
+          - util-linux-user
+
+    - name: Make Fish default shell for my user
+      user:
+        name: vplagov
+        shell: /usr/bin/fish
