@@ -1,0 +1,14 @@
+- hosts: localhost
+  tasks:
+
+    - name: Install Spotify flatpak
+      flatpak:
+        name: com.spotify.Client
+
+    - name: Install Telegram flatpak
+      flatpak:
+        name: org.telegram.desktop
+
+    - name: Install VLC flatpak
+      flatpak:
+        name: org.videolan.VLC
