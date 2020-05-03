@@ -23,6 +23,7 @@
           - libreoffice-core
           - libreofficekit
           - shotwell
+          - fira-code-fonts
         state: absent
 
     - name: Install packages by a direct RPM
