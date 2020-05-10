@@ -23,6 +23,7 @@
           - libreofficekit
           - shotwell
           - fira-code-fonts
+          - salt
         state: absent
 
     - name: Install packages by a direct RPM
