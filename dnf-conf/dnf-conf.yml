@@ -1,0 +1,17 @@
+- hosts: localhost
+  vars:
+    dnf_conf_path: /etc/dnf/dnf.conf
+
+  tasks:
+
+    - name: Remove dnf.conf file if present
+      become: true
+      file:
+        path: "{{ dnf_conf_path }}"
+        state: absent
+
+    - name: Create symlink for dnf.conf
+      file:
+        src: "{{ playbook_dir }}/dnf.conf"
+        dest: "{{ dnf_conf_path }}"
+        state: link
