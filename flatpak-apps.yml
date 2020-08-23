@@ -12,3 +12,11 @@
     - name: Install VLC flatpak
       flatpak:
         name: org.videolan.VLC
+
+    - name: Install MusicBrainz Picard
+      flatpak:
+        name: org.musicbrainz.Picard
+
+    - name: Install DBeaver - Universal Database Manager
+      flatpak:
+        name: io.dbeaver.DBeaverCommunity
