@@ -1,0 +1,9 @@
+- hosts: localhost
+
+  tasks:
+
+    - name: Disable recent files in Nautilus
+      dconf:
+        key: "/org/gnome/desktop/privacy/remember-recent-files"
+        value: "false"
+        state: absent
