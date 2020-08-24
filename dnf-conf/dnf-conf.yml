@@ -4,11 +4,17 @@
 
   tasks:
 
-    - name: Remove dnf.conf file if present
+    - name: Get stats about the existing dnf.conf file
+      stat:
+        path: "{{ dnf_conf_path }}"
+      register: file_details
+
+    - name: Remove existing dnf.conf if doesn't match condition
       become: true
       file:
         path: "{{ dnf_conf_path }}"
         state: absent
+      when: file_details.stat.exists and file_details.stat.isreg
 
     - name: Create symlink for dnf.conf
       file:
