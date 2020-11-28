@@ -20,3 +20,7 @@
     - name: Install DBeaver - Universal Database Manager
       flatpak:
         name: io.dbeaver.DBeaverCommunity
+
+    - name: Install Gimp - photo and image editor
+      flatpak:
+        name: org.gimp.GIMP
