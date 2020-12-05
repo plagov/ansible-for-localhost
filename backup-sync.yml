@@ -1,0 +1,9 @@
+- hosts: localhost
+  tasks:
+
+    - name: Sync photos from local to external drive
+      synchronize:
+        src: "{{ ansible_env.HOME }}/Pictures/Photos"
+        dest: "{{ ansible_env.HOME }}/usbdrive"
+        recursive: true
+        delete: true
