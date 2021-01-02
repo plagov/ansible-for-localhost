@@ -25,6 +25,7 @@
           - shotwell
           - fira-code-fonts
           - salt
+          - zoom
         state: absent
 
     - name: Install packages by a direct RPM
@@ -32,5 +33,4 @@
       package:
         name:
           - https://go.skype.com/skypeforlinux-64.rpm
-          - https://zoom.us/client/latest/zoom_x86_64.rpm
         state: present

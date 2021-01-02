@@ -24,3 +24,7 @@
     - name: Install Gimp - photo and image editor
       flatpak:
         name: org.gimp.GIMP
+
+    - name: Install Zoom
+      flatpak:
+        name: us.zoom.Zoom
