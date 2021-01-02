@@ -12,6 +12,7 @@
           - ifuse
           - gthumb
           - aria2
+          - hugo
         state: present
 
     - name: Uninstall common packages
