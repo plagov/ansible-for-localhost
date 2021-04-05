@@ -13,6 +13,7 @@
           - gthumb
           - aria2
           - hugo
+          - ulauncher
         state: present
 
     - name: Uninstall common packages
