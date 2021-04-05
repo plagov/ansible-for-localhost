@@ -28,10 +28,3 @@
           - salt
           - zoom
         state: absent
-
-    - name: Install packages by a direct RPM
-      become: true
-      package:
-        name:
-          - https://go.skype.com/skypeforlinux-64.rpm
-        state: present
