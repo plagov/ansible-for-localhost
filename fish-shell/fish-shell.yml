@@ -1,5 +1,9 @@
 - hosts: localhost
+  vars:
+    fish_config_path: /home/vplagov/.config/fish/config.fish
+
   tasks:
+
     - name: Install fish and related packages
       become: true
       package:
@@ -11,3 +15,21 @@
       user:
         name: vplagov
         shell: /usr/bin/fish
+
+    - name: Get stats about the existing fish.config file
+      stat:
+        path: "{{ fish_config_path }}"
+      register: file_details
+
+    - name: Remove Fish config file if it's not symlink
+      become: true
+      file:
+        path: "{{ fish_config_path }}"
+        state: absent
+      when: file_details.stat.exists and file_details.stat.isreg
+
+    - name: Create symlink for Fish config
+      file:
+        src: "{{ playbook_dir }}/config.fish"
+        dest: "{{ fish_config_path }}"
+        state: link
