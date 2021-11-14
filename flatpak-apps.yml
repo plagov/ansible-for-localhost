@@ -13,18 +13,6 @@
       flatpak:
         name: org.videolan.VLC
 
-    - name: Install MusicBrainz Picard
-      flatpak:
-        name: org.musicbrainz.Picard
-
-    - name: Install DBeaver - Universal Database Manager
-      flatpak:
-        name: io.dbeaver.DBeaverCommunity
-
-    - name: Install Gimp - photo and image editor
-      flatpak:
-        name: org.gimp.GIMP
-
     - name: Install Zoom
       flatpak:
         name: us.zoom.Zoom
@@ -32,3 +20,18 @@
     - name: Install Bitwarden
       flatpak:
         name: com.bitwarden.desktop
+
+    - name: Remove MusicBrainz Picard
+      flatpak:
+        name: org.musicbrainz.Picard
+        state: absent
+
+    - name: Remove DBeaver - Universal Database Manager
+      flatpak:
+        name: io.dbeaver.DBeaverCommunity
+        state: absent
+
+    - name: Remove Gimp - photo and image editor
+      flatpak:
+        name: org.gimp.GIMP
+        state: absent
