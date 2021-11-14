@@ -28,3 +28,7 @@
     - name: Install Zoom
       flatpak:
         name: us.zoom.Zoom
+
+    - name: Install Bitwarden
+      flatpak:
+        name: com.bitwarden.desktop
