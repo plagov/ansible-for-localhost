@@ -21,6 +21,10 @@
       flatpak:
         name: com.bitwarden.desktop
 
+    - name: Install WhatsApp desktop
+      flatpak:
+        name: com.github.eneshecan.WhatsAppForLinux
+
     - name: Remove MusicBrainz Picard
       flatpak:
         name: org.musicbrainz.Picard
