@@ -23,7 +23,7 @@
 
     - name: Install WhatsApp desktop
       flatpak:
-        name: com.github.eneshecan.WhatsAppForLinux
+        name: io.github.mimbrero.WhatsAppDesktop
 
     - name: Remove MusicBrainz Picard
       flatpak:
