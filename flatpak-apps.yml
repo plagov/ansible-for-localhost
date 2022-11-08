@@ -39,3 +39,7 @@
       flatpak:
         name: org.gimp.GIMP
         state: absent
+
+    - name: Install Viber
+      flatpak:
+        name: com.viber.Viber
