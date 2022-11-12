@@ -28,4 +28,5 @@
           - fira-code-fonts
           - salt
           - zoom
+          - code
         state: absent
