@@ -15,6 +15,7 @@
           - hugo
           - ulauncher
           - bat
+          - exa
         state: present
 
     - name: Uninstall common packages
